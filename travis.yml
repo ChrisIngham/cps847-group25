@@ -1,5 +1,8 @@
 language: python
 python:
   - "3.9"
+install: "pip install -r requirement.txt"
 script:
   - python -m unittest test.py
+  - coverage run test.py
+after_success: bash <(curl -s https://code.cov/bash)
