@@ -10,5 +10,5 @@ script:
   - coverage run test.py
 
   - echo "cps847cps847" | docker login -u "andrewlee847" --password-stdin
-  - docker push andrew87lee/dockertest
+  - docker push andrewlee847/dockertest
 after_success: bash <(curl -s https://codecov.io/bash)
