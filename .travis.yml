@@ -9,6 +9,6 @@ script:
   - python -m unittest test.py
   - coverage run test.py
 
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "cps847cps847" | docker login -u "andrewlee847" --password-stdin
   - docker push andrew87lee/dockertest
 after_success: bash <(curl -s https://codecov.io/bash)
