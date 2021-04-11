@@ -17,6 +17,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push andrewlee847/dockertest
 
+
 deploy:
   provider: elasticbeanstalk
   access_key_id:
