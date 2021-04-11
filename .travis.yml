@@ -13,6 +13,17 @@ script:
 
 after_success: 
   - bash <(curl -s https://codecov.io/bash)
-  
+
   - echo "cps847cps847" | docker login -u "andrewlee847" --password-stdin
   - docker push andrewlee847/dockertest
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "dtest"
+  env: "Dtest-env-1"
+  bucket_name: "elasticbeanstalk-us-east-2-175483454399"
+  on:
+    branch: master
+  access_key_id: "AKIASRW5BAO73WXQ72LM"
+  secret_access_key: "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"
