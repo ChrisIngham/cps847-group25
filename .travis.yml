@@ -24,6 +24,6 @@ deploy:
   env: "Dtest-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-175483454399"
   on:
-    branch: master
+    branch: main
   access_key_id: "AKIASRW5BAO73WXQ72LM"
   secret_access_key: "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"
