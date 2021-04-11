@@ -1,8 +1,14 @@
+sudo: required
 language: python
+services:
+  - docker
 python:
   - "3.9"
 install: "pip install -r requirement.txt"
 script:
   - python -m unittest test.py
   - coverage run test.py
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push andrew87lee/dockertest
 after_success: bash <(curl -s https://codecov.io/bash)
