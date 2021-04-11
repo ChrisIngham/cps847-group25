@@ -27,3 +27,5 @@ deploy:
   app: "dtest"
   env: "Dtest-env"
   bucket_name: "elasticbeanstalk-us-east-2-683233913294"
+  on:
+    branch: main
