@@ -9,6 +9,10 @@ script:
   - python -m unittest test.py
   - coverage run test.py
 
+  - docker image build -t andrewlee847/dockertest .
+
+after_success: 
+  - bash <(curl -s https://codecov.io/bash)
+  
   - echo "cps847cps847" | docker login -u "andrewlee847" --password-stdin
   - docker push andrewlee847/dockertest
-after_success: bash <(curl -s https://codecov.io/bash)
