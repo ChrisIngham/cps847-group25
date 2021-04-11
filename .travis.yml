@@ -14,7 +14,7 @@ script:
 after_success: 
   - bash <(curl -s https://codecov.io/bash)
 
-  - echo "cps847cps847" | docker login -u "andrewlee847" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push andrewlee847/dockertest
 
 deploy:
@@ -24,6 +24,6 @@ deploy:
   env: "Dtest-env"
   bucket_name: "elasticbeanstalk-us-east-2-683233913294"
   on:
-    branch: main
+    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
